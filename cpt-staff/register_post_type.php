@@ -138,7 +138,7 @@ class GF_Staff_Post_Type {
 			"cb" => "<input type=\"checkbox\" />",
 			"title" => _x('Name', 'column name'),
 			"staff_thumbnail" => __('Photo', 'symple'),
-			"departments" => __('Department', 'symple'),
+			"department" => __('Department', 'symple'),
 			"author" => __('Author', 'symple'),
 			"comments" => __('Comments', 'symple'),
 			"date" => __('Date', 'symple'),
@@ -171,7 +171,7 @@ class GF_Staff_Post_Type {
 				break;	
 
 			// Display the staff tags in the column view
-			case "departments":
+			case "department":
 
 			if ( $category_list = get_the_term_list( $post_id, 'department', '', ', ', '' ) ) {
 				echo $category_list;
@@ -192,7 +192,7 @@ class GF_Staff_Post_Type {
 		global $typenow;
 
 		// An array of all the taxonomyies you want to display. Use the taxonomy name or slug
-		$taxonomies = array( 'departments', 'staff_tag' );
+		$taxonomies = array( 'department' );
 
 		// must set this to the post type you want the filter(s) displayed on
 		if ( $typenow == 'staff' ) {
